@@ -11,7 +11,9 @@ const Nav = () => {
   };
 
   const clickEmpty = (e) => {
-    setOpenMenu(false);
+    if (openMenu && !hamMenu.current.contains(e.target)) {
+      setOpenMenu(false);
+    }
   };
 
   useEffect(() => {
@@ -79,15 +81,51 @@ const Nav = () => {
         </li>
       </ul>
 
-      <div className="dropDown" onClick={clickHamburger}>
+      <div className="dropDown"  ref={hamMenu} onClick={clickHamburger}>
         <GiHamburgerMenu size={38} />
 
         {openMenu && (
-          <div className="list" ref={hamMenu}>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#work">Work</a>
-            <a href="#contact">Contact</a>
+          <div className="list">
+            <Link
+              to="about"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={10}
+            >
+              About
+            </Link>
+            <Link
+              to="skills"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={10}
+            >
+              Skills
+            </Link>
+            <Link
+              to="work"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={10}
+            >
+              Work
+            </Link>
+            <Link
+              to="contact"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-65}
+              duration={10}
+            >
+              Contact
+            </Link>
           </div>
         )}
       </div>

@@ -9,7 +9,7 @@ const Contact = () => {
 
       <div className="text">
         <h1>Curious about me ?</h1>
-        <h1>Contact me</h1>
+        <h1 className="bye">Contact me</h1>
       </div>
 
         <div className="btnp">
