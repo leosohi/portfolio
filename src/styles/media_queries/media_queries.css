@@ -1,0 +1,65 @@
+@media (max-width: 1200px) {
+  #intro,
+  #about,
+  #skills,
+  #work,
+  #contact {
+    margin: 50px 60px;
+  }
+  .navList * {
+    display: none;
+  }
+  .dropDown {
+    display: block;
+    cursor: pointer;
+    position: relative;
+  }
+  .dropDown .list {
+    position: absolute;
+    transform: translateX(-75%);
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 200px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .dropDown .list a {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  #about .main {
+    flex-direction: column;
+    gap: 50px;
+  }
+  #about .main img {
+    margin-top: 40px;
+    width: 275px;
+    height: 275px;
+  }
+}
+@media (max-width: 600px) {
+  #intro {
+    height: 80vh;
+  }
+  #about .main img {
+    width: 200px;
+    height: 200px;
+  }
+  #contact {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+    height: 100vh;
+  }
+  #contact .text {
+    padding: 0;
+  }
+  #contact .btnp {
+    padding: 14px;
+  }
+}/*# sourceMappingURL=media_queries.css.map */

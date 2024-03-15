@@ -1,0 +1,397 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "sans-serif";
+}
+
+@mixin btn {
+  width: 128px;
+  height: 50px;
+  border-radius: 32px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: black;
+  color: #ededed;
+}
+
+// navBar
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 24px;
+  height: 120px;
+  position: sticky;
+  top: 0;
+
+  .logo {
+    font-size: 32px;
+
+    a {
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        color: #353535;
+      }
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+
+    a {
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    a.active {
+      color: #353535;
+    }
+  }
+}
+
+.dropDown {
+  display: none;
+}
+
+// intro
+#intro {
+  display: flex;
+  justify-content: center;
+  margin: 0 160px 96px 160px;
+  padding-top: 30px;
+  flex-direction: column;
+  height: 600px;
+
+  .text {
+    text-align: center;
+    font-size: 20px;
+    animation: fadedDown 1.5s ease-in-out;
+
+    .name {
+      font-size: 50px;
+    }
+
+    .role {
+      font-size: 25px;
+      margin-bottom: 16px;
+    }
+
+    .one {
+      animation: fadedDown 1.5s ease-in-out;
+    }
+    .two {
+      animation: fadedDown 2s ease-in-out;
+    }
+    .three {
+      animation: fadedDown 3s ease-in-out;
+    }
+
+    .hi {
+      color: #888888;
+      margin-bottom: 4px;
+    }
+  }
+
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    gap: 25px;
+
+    button {
+      @include btn;
+    }
+
+    .cv {
+      background-color: #ededed;
+      color: black;
+      animation: fadedLeft 1.5s ease-in-out;
+
+      &:hover {
+        background-color: #353535;
+        color: white;
+      }
+    }
+
+    .contact {
+      background-color: black;
+      color: white;
+      border: 2px solid white;
+      animation: fadedRight 1.5s ease-in-out;
+
+      &:hover {
+        background-color: #ededed;
+        color: black;
+      }
+    }
+  }
+}
+
+// about
+#about {
+  display: flex;
+  justify-content: center;
+  margin: 0 160px;
+  padding-top: 30px;
+  min-height: 750px;
+  flex-direction: column;
+
+  .heading {
+    text-align: center;
+
+    .who {
+      color: #858585;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+  }
+
+  .main {
+    display: flex;
+    min-height: 500px;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 350px;
+    height: 350px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .about {
+    max-width: 700px;
+
+    .subheading {
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .text {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #858585;
+    }
+  }
+}
+
+// skills
+#skills {
+  display: flex;
+  margin: 0 140px;
+  padding-top: 30px;
+  min-height: 750px;
+  flex-direction: column;
+
+  .header {
+    text-align: center;
+
+    .why {
+      color: #858585;
+    }
+
+    .sk {
+      font-size: 48px;
+    }
+  }
+
+  .row {
+    margin-top: 32px;
+    gap: 30px;
+
+    .col {
+      min-width: 300px;
+      padding: 24px;
+      border: 2px solid #353535;
+      border-radius: 30px;
+
+      h2 {
+        text-align: center;
+      }
+
+      .progress {
+        margin-bottom: 15px;
+        border-radius: 100px;
+      }
+    }
+  }
+}
+
+// work
+#work {
+  display: flex;
+  margin: 0 140px;
+  padding-top: 30px;
+  min-height: 750px;
+  flex-direction: column;
+
+  .header {
+    text-align: center;
+  }
+
+  .row {
+    margin-top: 32px;
+    gap: 30px;
+
+    .col {
+      width: 300px;
+      height: 450px;
+      border: 1px solid #353535;
+      border-radius: 8px;
+      padding: 0;
+
+      img {
+        height: 300px;
+        width: 100%;
+        border-radius: 8px 8px 0 0;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      p {
+        font-size: 28px;
+        font-weight: 700;
+        text-align: center;
+        margin: 16px;
+      }
+
+      .btnp {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+      }
+
+      button {
+        @include btn;
+        border-radius: 4px;
+      }
+
+      .git:hover {
+        background-color: #888888;
+      }
+
+      .live {
+        background-color: black;
+        border: 1px solid #858585;
+        color: #858585;
+
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+// contact
+#contact {
+  display: flex;
+  margin: 0 160px 80px 160px;
+  padding-top: 100px;
+  height: 800px;
+  gap: 100px;
+  justify-content: center;
+
+  .text {
+    padding-top: 100px;
+
+    h1 {
+      font-size: 50px;
+    }
+  }
+
+  .btnp {
+    margin-top: 85px;
+    display: flex;
+    border: 1px solid #888888;
+    border-radius: 8px;
+    padding: 32px;
+    justify-content: center;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+
+    p {
+      font-size: 19px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 16px 0 0 0;
+
+      a {
+        color: white;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: #858585;
+        }
+      }
+    }
+
+    p.mail {
+      margin: 0;
+      white-space: normal;
+    }
+  }
+}
+
+// footer
+.foot {
+  text-align: end;
+  margin-right: 10px;
+}
+
+// animation
+@keyframes fadedLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-65px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+}
+
+@keyframes fadedDown {
+  from {
+    opacity: 0;
+    transform: translateY(-70px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadedRight {
+  from {
+    opacity: 0;
+    transform: translateX(65px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+}
