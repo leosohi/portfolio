@@ -1,4 +1,5 @@
 import React from "react";
+import cv from "../../assets/immediate.pdf";
 
 const Intro = () => {
   return (
@@ -12,7 +13,9 @@ const Intro = () => {
       </div>
 
       <div className="btnContainer">
-        <button className="cv" onClick={()=>window.open("/src/assets/late.pdf", "_blank")}>Resume</button>
+        <a href={cv} target="_blank" alt="cv">
+          <button className="cv">Resume</button>
+        </a>
 
         <a href="#contact">
           <button className="contact">Contact</button>

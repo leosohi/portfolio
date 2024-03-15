@@ -3,26 +3,28 @@ import { Link } from "react-scroll";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const Nav = () => {
-  const hamMenu = useRef(null);
+  const hamRef = useRef(null);
   const [openMenu, setOpenMenu] = useState(false);
 
   const clickHamburger = () => {
     setOpenMenu(!openMenu);
+    console.log(openMenu);
   };
-
-  const clickEmpty = (e) => {
-    if (openMenu && !hamMenu.current.contains(e.target)) {
-      setOpenMenu(false);
-    }
-  };
-
+  
+  // click outside logic
   useEffect(() => {
-    document.addEventListener("mousedown", clickEmpty);
+    let clickSth = (e) => {
+      if (!hamRef.current.contains(e.target)) {
+        setOpenMenu(false);
+      }
+    }
+
+    document.addEventListener("mousedown", clickSth);
 
     return () => {
-      document.removeEventListener("mousedown", clickEmpty);
-    };
-  }, [openMenu]);
+      document.removeEventListener("mousedown", clickSth)
+    }
+  });
 
   return (
     <div className="navBar">
@@ -81,7 +83,7 @@ const Nav = () => {
         </li>
       </ul>
 
-      <div className="dropDown"  ref={hamMenu} onClick={clickHamburger}>
+      <div className="dropDown" onClick={clickHamburger} ref={hamRef}>
         <GiHamburgerMenu size={38} />
 
         {openMenu && (
@@ -91,8 +93,9 @@ const Nav = () => {
               activeClass="active"
               spy={true}
               smooth={true}
-              offset={-100}
+              offset={-60}
               duration={10}
+              onClick={clickHamburger}
             >
               About
             </Link>
@@ -101,8 +104,9 @@ const Nav = () => {
               activeClass="active"
               spy={true}
               smooth={true}
-              offset={-100}
+              offset={-45}
               duration={10}
+              onClick={clickHamburger}
             >
               Skills
             </Link>
@@ -111,8 +115,9 @@ const Nav = () => {
               activeClass="active"
               spy={true}
               smooth={true}
-              offset={-100}
+              offset={-50}
               duration={10}
+              onClick={clickHamburger}
             >
               Work
             </Link>
@@ -121,8 +126,9 @@ const Nav = () => {
               activeClass="active"
               spy={true}
               smooth={true}
-              offset={-65}
+              offset={0}
               duration={10}
+              onClick={clickHamburger}
             >
               Contact
             </Link>
