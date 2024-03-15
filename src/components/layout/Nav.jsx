@@ -8,7 +8,6 @@ const Nav = () => {
 
   const clickHamburger = () => {
     setOpenMenu(!openMenu);
-    console.log(openMenu);
   };
   
   // click outside logic
