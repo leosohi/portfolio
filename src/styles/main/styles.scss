@@ -27,9 +27,10 @@ body {
   justify-content: space-around;
   font-size: 24px;
   width: 100vw;
-  height: 120px;
+  height: 75px;
   position: sticky;
   top: 0;
+  transition: background-color 0.2s ease-in-out;
 
   .logo {
     font-size: 32px;
@@ -49,6 +50,7 @@ body {
     list-style-type: none;
     display: flex;
     gap: 40px;
+    margin: 0;
 
     a {
       text-decoration: none;
@@ -62,12 +64,26 @@ body {
   }
 }
 
+.navBar.scroll {
+  background-color: #fff;
+  a {
+    color: black;
+  }
+}
+
 .dropDown {
   display: none;
 
   .list {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
       rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+  }
+
+  .list.open {
+    opacity: 1;
   }
 }
 

@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 const Nav = () => {
   const hamRef = useRef(null);
   const [openMenu, setOpenMenu] = useState(false);
+  const [nav, setNav] = useState(false);
 
   const clickHamburger = () => {
     setOpenMenu(!openMenu);
@@ -25,8 +26,15 @@ const Nav = () => {
     }
   });
 
+  // changeNav color
+  const changeNav = () => {
+    window.scrollY >= 120 ? setNav(true) : setNav(false)
+  };
+
+  window.addEventListener("scroll", changeNav);
+
   return (
-    <div className="navBar">
+    <div className={nav ? "navBar scroll" : "navBar"}>
       <div className="logo">
         <a href="#">Leo So</a>
       </div>
@@ -83,10 +91,10 @@ const Nav = () => {
       </ul>
 
       <div className="dropDown" onClick={clickHamburger} ref={hamRef}>
-        <GiHamburgerMenu size={38} />
+        <GiHamburgerMenu size={38} className={nav ? "burgerB" : ""}/>
 
-        {openMenu && (
-          <div className="list">
+
+          <div className={openMenu ? "list open" : "list"}>
             <Link
               to="about"
               activeClass="active"
@@ -132,7 +140,7 @@ const Nav = () => {
               Contact
             </Link>
           </div>
-        )}
+
       </div>
     </div>
   );
