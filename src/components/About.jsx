@@ -1,5 +1,5 @@
 import React from "react";
-import me from "../assets/me.jpg"
+import suit from "../assets/meSuit.jpg"
 
 const About = () => {
   return (
@@ -12,7 +12,7 @@ const About = () => {
       <div className="main">
 
         
-      <img src={me} alt="myself"/>
+      <img src={suit} alt="myself"/>
 
         <div className="about">
             <p className="subheading">A Dedicated Front-end Web Developer</p>
